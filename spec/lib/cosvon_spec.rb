@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe Cosvon do
-  it { true }
   describe ".parse" do
     it "return hash from Cosvon" do
       result = described_class.parse(<<-COSVON)
@@ -16,9 +15,15 @@ FamiconTV,Sharp
         "HI-Saturn"=>"Hitachi",
         "FamiconTV"=>"Sharp",
       )
-      
     end
-    # TODO 
-    # 1行目がCOSVONを示す文字列でなかったら死ぬ
+    context "Invalid data" do
+      context "which does'nt start with cosvon type" do
+        it "raise Cosvon Invalid Data error." do
+          expect { described_class.parse("hoge") }.to raise_exception(Cosvon::InvalidDataError)
+        end
+        #TODO Cosvon::001 is NG
+      end
+    end
+
   end
 end
