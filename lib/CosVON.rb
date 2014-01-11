@@ -1,5 +1,5 @@
-require "CosVON/version"
+require "Cosvon/version"
 
-module CosVON
+module Cosvon
   # Your code goes here...
 end

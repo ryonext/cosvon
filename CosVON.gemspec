@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'CosVON/version'
+require 'cosvon/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "CosVON"
-  spec.version       = CosVON::VERSION
+  spec.version       = Cosvon::VERSION
   spec.authors       = ["ryonext", "okitan"]
   spec.email         = ["ryonext.s@gmail.com", "okitakunio@gmail.com"]
   spec.summary       = %q{Parse and serialize CosVon.}
