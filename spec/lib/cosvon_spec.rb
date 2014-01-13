@@ -68,6 +68,37 @@ Mozilla,Firefox,"",""
              "Mozilla"=>"Firefox"
            }
       ],
+      [ <<-COSVON,
+CoSVON:0.1
+no DQ,foo
+with DQ,"foo"
+inner DQ,"foo""bar"
+many DQs,""""""""""""""""""""
+           COSVON
+           {
+             "no DQ"=>"foo",
+             "with DQ"=>"foo",
+             "inner DQ"=>"foo\"bar",
+             "many DQs"=>"\"\"\"\"\"\"\"\"\""
+           }
+      ],
+      [ <<-COSVON,
+CoSVON:0.1
+no extra comma,hoge
+extra comma,fuga,
+extra comma with DQ,piyo,""
+many extra commas,moge,,,,,,,
+"",""
+,,
+,"",
+           COSVON
+           {
+             "no extra comma"=>"hoge",
+             "extra comma"=>"fuga",
+             "extra comma with DQ"=>"piyo",
+             "many extra commas"=>"moge"
+           }
+      ]
     ].each do |cosvon, expected|
 
       it "return hash from Cosvon" do

@@ -8,7 +8,7 @@ module Cosvon
     def parse(cosvon)
       raise InvalidDataError unless cosvon.split("\n").first =~ /CoSVON:0\.1/i 
       Hash[CSV.parse(cosvon)[1..-1].map do |arr|
-        arr.first(2) if arr[0] && arr[1]
+        arr.first(2) unless arr[0].to_s.empty? || arr[1].to_s.empty?
       end.compact]
     end
   end
