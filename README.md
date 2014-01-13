@@ -1,5 +1,7 @@
 # CosVON
 
+Answer for http://nabetani.sakura.ne.jp/yokohamarb/2014.01.cosvon/
+
 TODO: Write a gem description
 
 ## Installation
